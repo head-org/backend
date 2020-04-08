@@ -1,0 +1,21 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build & publish the Docker image
+      uses: docker/build-push-action@v1
+      with:
+        add_git_labels: true
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        username: ${{ secrets.DOCKER_USERNAME }}
+        dockerfile: Head.Api/Dockerfile
+        repository: ${{ github.repository }}
+        tags: latest
