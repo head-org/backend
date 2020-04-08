@@ -3,6 +3,8 @@ name: Docker Image CI
 on:
   push:
     branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
 
@@ -16,6 +18,6 @@ jobs:
         add_git_labels: true
         password: ${{ secrets.DOCKER_PASSWORD }}
         username: ${{ secrets.DOCKER_USERNAME }}
-        dockerfile: Head.Api/Dockerfile
+        path: Head.Api
         repository: alejandroandreu/head-backend
         tags: latest
