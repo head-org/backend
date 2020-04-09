@@ -2,11 +2,13 @@ version: '3'
 
 services:
     mongo:
-      image: mongo
+      image: mongo:bionic
       restart: always
       environment:
         MONGO_INITDB_ROOT_USERNAME: root
         MONGO_INITDB_ROOT_PASSWORD: example
+      volumes:
+        - /mnt/earlgrey-miso/mongodb:/data/db
       networks:
         - private
 
@@ -26,9 +28,9 @@ services:
       labels:
        - "traefik.enable=true"
        - "traefik.docker.network=public"
-       - "traefik.http.routers.blog.rule=Host(`api.miso.lapsus.live`)"
-       - "traefik.http.routers.blog.entrypoints=https"
-       - "traefik.http.routers.blog.tls.certresolver=cloudflare"
+       - "traefik.http.routers.miso.rule=Host(`api.miso.lapsus.live`)"
+       - "traefik.http.routers.miso.entrypoints=https"
+       - "traefik.http.routers.miso.tls.certresolver=cloudflare"
 
 networks:
   public:
