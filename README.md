@@ -1,5 +1,4 @@
-Miso .NET Core server
-===============
+# Miso .NET Core server
 
 To run the app execute the following command:
 
