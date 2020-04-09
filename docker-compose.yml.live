@@ -15,13 +15,14 @@ services:
         - mongo
       image: alejandroandreu/head-backend:latest
       restart: always
-	  environment:
+      environment:
         - MongoDB__User=root
         - MongoDB__Password=example
         - MongoDB__Host=mongo
         - MongoDB__Port=27017
-      links:
-        - mongo
+      networks:
+        - private
+        - public
       labels:
        - "traefik.enable=true"
        - "traefik.docker.network=public"
