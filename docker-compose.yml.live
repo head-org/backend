@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+    mongo:
+      image: mongo
+      restart: always
+      environment:
+        MONGO_INITDB_ROOT_USERNAME: root
+        MONGO_INITDB_ROOT_PASSWORD: example
+      networks:
+        - private
+
+    backend:
+      depends_on:
+        - mongo
+      image: alejandroandreu/head-backend:latest
+      restart: always
+      environment:
+        MONGO_USERNAME: root
+        MONGO_PASSWORD: example
+        MONGO_HOST: localhost:27017
+      links:
+        - mongo
+      labels:
+       - "traefik.enable=true"
+       - "traefik.docker.network=public"
+       - "traefik.http.routers.blog.rule=Host(`api.head.lapsus.live`)"
+       - "traefik.http.routers.blog.entrypoints=https"
+       - "traefik.http.routers.blog.tls.certresolver=cloudflare"
+
+networks:
+  public:
+    external: true
+  private:
+    external: true
