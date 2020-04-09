@@ -20,29 +20,32 @@ namespace Head.Api.Controllers
 
         // GET api/todos
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Post>>> Get()
+        public async Task<ActionResult<IEnumerable<PostResponseModel>>> Get()
         {
-            return new ObjectResult(await _repo.GetAll());
+            var posts = await _repo.GetAll();
+            return new ObjectResult(posts.Select(x => x.ToResponseModel()));
         }
 
         // GET api/todos/1
         [HttpGet("{id}")]
-        public async Task<ActionResult<Post>> Get(long id)
+        public async Task<ActionResult<PostResponseModel>> Get(long id)
         {
             var post = await _repo.GetPost(id);
             if (post == null)
                 return new NotFoundResult();
 
-            return new ObjectResult(post);
+            return new ObjectResult(post.ToResponseModel());
         }
 
         // POST api/todos
         [HttpPost]
-        public async Task<ActionResult<Post>> Post([FromBody] Post post)
+        public async Task<ActionResult<PostResponseModel>> Create([FromBody] PostRequestModel source)
         {
+            var post = Post.FromRequestModel(source);
+
             post.Id = await _repo.GetNextId();
             await _repo.Create(post);
-            return new OkObjectResult(post);
+            return new OkObjectResult(post.ToResponseModel());
         }
     }
 }

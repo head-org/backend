@@ -16,6 +16,13 @@ namespace Head.Api.Context
         {
             var client = new MongoClient(config.ConnectionString);
             _db = client.GetDatabase(config.Database);
+
+            // Create index for location. This needs future review and configuration 
+            // https://stackoverflow.com/questions/51248295/mongodb-c-sharp-driver-create-index
+            var indexs = new IndexKeysDefinitionBuilder<Post>().Geo2DSphere(x => x.Location);
+
+            var indexModel = new CreateIndexModel<Post>(indexs);
+            Posts.Indexes.CreateOne(indexModel);
         }
 
         public IMongoCollection<Post> Posts => _db.GetCollection<Post>("Posts");

@@ -1,13 +1,14 @@
 version: '3.1'
 services:
     mongo:
-        container_name: mongo
         image: mongo
         restart: always
+        environment:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: example
         ports:
-          - "27017:27017"
-          
-    head-server:
+          - 27017:27017
+    backend:
         build: ./Head.Api
         restart: always
         ports:
