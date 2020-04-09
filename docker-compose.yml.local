@@ -16,5 +16,10 @@ services:
             - 5001:443
         depends_on:
             - mongo
+        environment:
+            - MongoDB__User=root
+            - MongoDB__Password=example
+            - MongoDB__Host=mongo
+            - MongoDB__Port=27017
         links:
           - mongo

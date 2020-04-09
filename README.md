@@ -1,5 +1,5 @@
 # backend
 
 ```sh
-docker-compose -d -f docker-compose.yml.local up
+docker-compose -f docker-compose.yml.local up -d
 ```

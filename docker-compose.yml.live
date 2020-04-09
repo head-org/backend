@@ -15,11 +15,11 @@ services:
         - mongo
       image: alejandroandreu/head-backend:latest
       restart: always
-      environment:
-        MONGO_USERNAME: root
-        MONGO_PASSWORD: example
-        MONGO_HOST: localhost
-		MONGO_PORT: 27017
+	  environment:
+        - MongoDB__User=root
+        - MongoDB__Password=example
+        - MongoDB__Host=mongo
+        - MongoDB__Port=27017
       links:
         - mongo
       labels:
