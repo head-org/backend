@@ -16,8 +16,5 @@ services:
             - 5001:443
         depends_on:
             - mongo
-        volumes:
-            - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
-            - ${HOME}/.aspnet/https:/root/.aspnet/https/
         links:
           - mongo

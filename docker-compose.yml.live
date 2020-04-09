@@ -18,7 +18,8 @@ services:
       environment:
         MONGO_USERNAME: root
         MONGO_PASSWORD: example
-        MONGO_HOST: localhost:27017
+        MONGO_HOST: localhost
+		MONGO_PORT: 27017
       links:
         - mongo
       labels:
