@@ -1,5 +1,6 @@
 ﻿using Head.Api.Models;
 using Head.Api.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace Head.Api.Controllers
 {
     [Produces("application/json")]
     [Route("api/[Controller]")]
+    [Authorize]
     public class PostsController : Controller
     {
         private readonly IPostRepository _repo;
