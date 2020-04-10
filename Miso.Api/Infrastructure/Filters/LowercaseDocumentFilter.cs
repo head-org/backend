@@ -3,7 +3,7 @@ using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Collections.Generic;
 
-namespace Head.Api.Infrastructure.Filters
+namespace Miso.Api.Infrastructure.Filters
 {
     /// <summary>
     /// This class orginally was created by https://gist.github.com/smaglio81 and modified version used in this project you can find here

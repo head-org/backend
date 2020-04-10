@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Head.Api", "Head.Api.csproj", "{80322FC0-C43B-4CD6-89F6-C53AA5454840}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Miso.Api", "Miso.Api\Miso.Api.csproj", "{80322FC0-C43B-4CD6-89F6-C53AA5454840}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

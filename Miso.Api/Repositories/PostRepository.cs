@@ -1,5 +1,5 @@
-﻿using Head.Api.Context;
-using Head.Api.Models;
+﻿using Miso.Api.Context;
+using Miso.Api.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
@@ -7,12 +7,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Head.Api.Repositories
+namespace Miso.Api.Repositories
 {
     public class PostRepository : IPostRepository
     {
-        private readonly IHeadContext _context;
-        public PostRepository(IHeadContext context)
+        private readonly IMisoContext _context;
+        public PostRepository(IMisoContext context)
         {
             _context = context;
         }

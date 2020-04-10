@@ -9,7 +9,7 @@ services:
         ports:
           - 27017:27017
     backend:
-        build: ./Head.Api
+        build: ./Miso.Api
         restart: always
         ports:
             - 5000:80
@@ -21,7 +21,7 @@ services:
             - MongoDB__Password=example
             - MongoDB__Host=mongo
             - MongoDB__Port=27017
-            - JwtToken__SecretKey=super-secret-local-key
-            - JwtToken__Issuer=head-api-local
+            - JwtToken__SecretKey=super-secret-miso-key-local
+            - JwtToken__Issuer=miso-api-local
         links:
           - mongo

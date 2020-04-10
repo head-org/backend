@@ -1,10 +1,10 @@
-﻿using Head.Api.Models;
+﻿using Miso.Api.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Head.Api.Repositories
+namespace Miso.Api.Repositories
 {
     public interface IPostRepository
     {

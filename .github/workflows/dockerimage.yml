@@ -18,6 +18,6 @@ jobs:
         add_git_labels: true
         password: ${{ secrets.DOCKER_PASSWORD }}
         username: ${{ secrets.DOCKER_USERNAME }}
-        path: Head.Api
-        repository: alejandroandreu/head-backend
+        path: Miso.Api
+        repository: alejandroandreu/miso-backend
         tags: latest

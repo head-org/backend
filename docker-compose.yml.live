@@ -15,15 +15,15 @@ services:
     backend:
       depends_on:
         - mongo
-      image: alejandroandreu/head-backend:latest
+      image: alejandroandreu/miso-backend:latest
       restart: always
       environment:
         - MongoDB__User=root
         - MongoDB__Password=example
         - MongoDB__Host=mongo
         - MongoDB__Port=27017
-        - JwtToken__SecretKey=super-secret-live-key
-        - JwtToken__Issuer=head-api-live
+        - JwtToken__SecretKey=super-secret-miso-key-local
+        - JwtToken__Issuer=miso-api-local
       networks:
         - private
         - public

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Head.Api.Models
+namespace Miso.Api.Models
 {
     public class Coordinates
     {

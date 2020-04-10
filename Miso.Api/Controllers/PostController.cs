@@ -1,5 +1,5 @@
-﻿using Head.Api.Models;
-using Head.Api.Repositories;
+﻿using Miso.Api.Models;
+using Miso.Api.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Head.Api.Controllers
+namespace Miso.Api.Controllers
 {
     [Produces("application/json")]
     [Route("api/[Controller]")]

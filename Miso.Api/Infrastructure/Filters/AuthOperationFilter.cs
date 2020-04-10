@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Head.Api.Infrastructure.Filters
+namespace Miso.Api.Infrastructure.Filters
 {
     public class AuthOperationFilter : IOperationFilter
     {

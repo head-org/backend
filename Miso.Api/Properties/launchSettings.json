@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Head.Api": {
+    "Miso.Api": {
       "commandName": "Project",
       "launchBrowser": true,
       "useSSL": true,

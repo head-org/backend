@@ -1,18 +1,18 @@
-﻿using Head.Api.Infrastructure;
-using Head.Api.Models;
+﻿using Miso.Api.Infrastructure;
+using Miso.Api.Models;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Head.Api.Context
+namespace Miso.Api.Context
 {
-    public class HeadContext : IHeadContext
+    public class MisoContext : IMisoContext
     {
         private readonly IMongoDatabase _db;
 
-        public HeadContext(MongoDBConfig config)
+        public MisoContext(MongoDBConfig config)
         {
             var client = new MongoClient(config.ConnectionString);
             _db = client.GetDatabase(config.Database);

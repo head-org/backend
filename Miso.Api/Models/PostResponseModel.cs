@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Head.Api.Models
+namespace Miso.Api.Models
 {
-    public class PostRequestModel
+    public class PostResponseModel
     {
+        public long Id { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
         public Coordinates Location { get; set; }

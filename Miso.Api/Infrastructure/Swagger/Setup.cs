@@ -1,4 +1,4 @@
-﻿using Head.Api.Infrastructure.Filters;
+﻿using Miso.Api.Infrastructure.Filters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Head.Api.Infrastructure.Swagger
+namespace Miso.Api.Infrastructure.Swagger
 {
     public static class Setup
     {
@@ -21,7 +21,7 @@ namespace Head.Api.Infrastructure.Swagger
                     c.OperationFilter<AuthOperationFilter>();
                     c.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
                     {
-                        Description = "JWT Authorization header using the Bearer scheme.",
+                        Description = "JWT Authorization misoer using the Bearer scheme.",
                         Type = SecuritySchemeType.Http,
                         BearerFormat = "JWT",
                         In = ParameterLocation.Header,
