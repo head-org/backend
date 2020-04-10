@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Head.Api.Context;
+using Head.Api.Filters;
 using Head.Api.Infrastructure;
 using Head.Api.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -43,6 +44,7 @@ namespace Head.Api
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Head Api", Version = "v1" });
+                c.DocumentFilter<LowercaseDocumentFilter>();
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
@@ -74,12 +76,6 @@ namespace Head.Api
             {
                 endpoints.MapControllers();
             });
-
-            //app.UseSwagger();
-            //app.UseSwaggerUI(c =>
-            //{
-            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            //});
         }
     }
 }
