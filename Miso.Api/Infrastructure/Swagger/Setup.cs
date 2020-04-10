@@ -21,7 +21,7 @@ namespace Miso.Api.Infrastructure.Swagger
                     c.OperationFilter<AuthOperationFilter>();
                     c.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
                     {
-                        Description = "JWT Authorization misoer using the Bearer scheme.",
+                        Description = "JWT Authorization header using the Bearer scheme.",
                         Type = SecuritySchemeType.Http,
                         BearerFormat = "JWT",
                         In = ParameterLocation.Header,
