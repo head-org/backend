@@ -19,13 +19,13 @@ namespace Head.Api.Infrastructure.Swagger
                     c.SwaggerDoc(settings.Version, settings);
                     c.DocumentFilter<LowercaseDocumentFilter>();
                     c.OperationFilter<AuthOperationFilter>();
-                    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                    c.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
                     {
                         Description = "JWT Authorization header using the Bearer scheme.",
                         Type = SecuritySchemeType.Http,
                         BearerFormat = "JWT",
                         In = ParameterLocation.Header,
-                        Scheme = "Bearer"
+                        Scheme = "bearer"
                     });
                 });
             }
