@@ -37,7 +37,7 @@ namespace Miso.Api.Models
             {
                 Title = source.Title,
                 Content = source.Content,
-                Location = GeoJson.Point(new GeoJson2DGeographicCoordinates(source.Location.Lat, source.Location.Long))
+                Location = GeoJson.Point(new GeoJson2DGeographicCoordinates(source.Location.Long, source.Location.Lat))
             };
 
             return post;  
